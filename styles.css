@@ -1,0 +1,29 @@
+body {
+            font-family: 'Poppins', sans-serif;
+            /* Animated gradient background */
+            background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+            overflow-x: hidden;
+        }
+
+        /* Keyframes for the background animation */
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Styling for the content screens to handle transitions */
+        .screen {
+            transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+            position: absolute; /* Position screens on top of each other */
+            width: 100%;
+        }
+        
+        /* State for when a screen is hidden */
+        .screen.hidden {
+            opacity: 0;
+            transform: scale(0.95);
+            pointer-events: none; /* Disable interaction when hidden */
+        }
